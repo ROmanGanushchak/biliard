@@ -29,6 +29,6 @@ To run this project locally, you need to have Python and Pygame installed. You c
 
 ```bash
 pip install pygame
-git clone https://github.com/your-username/billiard.git
+git clone https://github.com/ROmanGanushchak/biliard.git
 cd billiard
 python main.py
