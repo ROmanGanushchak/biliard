@@ -51,7 +51,6 @@ class Game:
                           Wall(0 + self.size_hole, 750, 1199 // 2 - self.size_hole, 750),
                           Wall(1199 // 2 + self.size_hole, 750, 1199 - self.size_hole, 750)]
 
-        # self.mas_holes = []
         self.mas_holes = [Hole([0, 50], self.size_hole), Hole([self.size_field[0] // 2, 30], self.size_hole),
                           Hole([self.size_field[0], 50], self.size_hole), Hole([0, self.size_field[1] - 50], self.size_hole),
                           Hole([self.size_field[0] // 2, self.size_field[1] - 30], self.size_hole), Hole([self.size_field[0], self.size_field[1] - 50], self.size_hole)]
@@ -61,12 +60,6 @@ class Game:
         change_menu("start")
 
     def respawn_balls(self):
-        # self.mas_balls = [Controls_ball(1000, 600, self.max_r, self.FPS)]
-        # start_pos = [600, 300]
-        # for i in range(5):
-        #     for a in range(5):
-        #         self.mas_balls.extend(Ball())
-        #
         self.mas_balls = [Controls_ball(randint(self.max_r + self.field_spawn_balls[0], self.field_spawn_balls[2] - self.max_r),
                                         randint(self.max_r + self.field_spawn_balls[1], self.field_spawn_balls[3] - self.max_r),
                                         randint(self.min_r, self.max_r), self.FPS)]
@@ -109,7 +102,6 @@ class Game:
         for wall in self.mas_walls:
             l = self.check_touch_circle_line(ball, wall)
             if not (l is False):
-                # v1 = v - ((2 * v * n) / (n * n)) * n
                 q = (2 * (ball.vx * wall.normal_x + ball.vy * wall.normal_y)) / (wall.normal_x ** 2 + wall.normal_y ** 2)
                 qn = [q * wall.normal_x, q * wall.normal_y]
                 ball.vx, ball.vy = ball.vx - qn[0], ball.vy - qn[1]
@@ -245,8 +237,6 @@ class Game:
 
             pygame.display.update()
             self.clock.tick(self.FPS)
-            # print(self.point_account.get_number())
-            print(self.clock.get_fps())
 
 class Start_menu:
     def __init__(self, sc, size_main_surface):

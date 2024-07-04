@@ -11,9 +11,9 @@ class Hole:
     def check_belong(self, pos):
         if self.get_distance(pos) < self.r:
             return True
-        return
+        return False
 
-    def get_vectore_inside(self, pos):
+    def get_vector_inside(self, pos):
         return [self.x - pos[0], self.y - pos[1]]
 
     def get_edge_points(self):

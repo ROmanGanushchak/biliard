@@ -5,7 +5,7 @@ import pygame
 class Ball:
     def __init__(self, x, y, r, FPS, index_item, color=(255, 0, 0), color_text=(255, 255, 255)):
         self.mk = 0.95
-        self.vx, self.vy = 0, 0 #choice([randint(100, 101), randint(-101, -100)]), choice([randint(100, 101), randint(-101, -100)])
+        self.vx, self.vy = 0, 0
         self.mass, self.r, self.FPS, self.index_item, self.color = r, r, FPS, index_item, color
         self.x, self.y = x, y
         self.f = pygame.font.Font(None, r)
